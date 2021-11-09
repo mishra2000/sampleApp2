@@ -13,6 +13,8 @@ end
 group :production do
   gem 'pg'
 end
+
+gem 'will_paginate'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
