@@ -1,0 +1,15 @@
+<h4><%= flash[:notice] %></h4>
+<%= form_with do |form|%>
+
+    <div class="field">
+        <%=form.label :username%>
+        <%= form.text_field :username%>
+    </div>
+    <div class="field">
+        <%=form.label :password%>
+        <%= form.password_field :password%>
+    </div>
+    <div class="action">
+        <%=form.submit :login%>
+    </div>
+<% end %>

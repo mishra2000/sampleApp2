@@ -1,5 +1,7 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: %i[ show edit update destroy ]
+  before_action :check_login
+
 
   # GET /employees or /employees.json
   def index
@@ -10,6 +12,13 @@ class EmployeesController < ApplicationController
   def show
   end
 
+
+  def check_login
+    if !session[:admin]
+      redirect_to '/admin/login'
+    end
+  end
+  
   # GET /employees/new
   def new
     @employee = Employee.new
