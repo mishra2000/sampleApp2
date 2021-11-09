@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <% if session[:admin] %>
+		 	<%= link_to "logout", "/admin/logout" %>
+		<% else %> 
+			<%= link_to "login", "/admin/login" %>
+		 <% end %>  
     <%= yield %>
   </body>
 </html>
